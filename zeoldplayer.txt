@@ -1,0 +1,41 @@
+function drawPlayer(iframe) {
+  pen.lineWidth = 2;
+	pen.strokeStyle = '#39c6ff';
+  drawEllipse(xvar + 0.8*d, yvar+23, 12, 10);
+	pen.strokeStyle = '#6c7c30';
+	drawEllipse(xvar+ 4 + 2*d,yvar+ 25 + 0.3*(d<0), 2, 2)
+  //drawDot(xvar+ 4 + 2*d,yvar+ 25 + 0.3*(d<0), 0.5, "6c7c30");
+  drawDot(xvar+(-4) + 2*d,yvar+ 25 + 0.3*(d>0), 0.5, "6c7c30");
+  drawLine(xvar+ 12.5, yvar+ 13, xvar+ (-12.5), yvar+ 13, 2, "39c6ff");
+  drawLine(xvar+ (-12.5), yvar+ 13, xvar+ (-12.5), yvar+ (-13), 2, "39c6ff");
+  drawLine(xvar+ (-12.5), yvar+ (-13), xvar+ 12.5, yvar+ (-13), 2, "39c6ff");
+  drawLine(xvar+ 12.5, yvar+ (-13), xvar+ 12.5, yvar+ 13, 2, "39c6ff");
+	drawLine(xvar+ 5, yvar + 18, xvar-5, yvar+18, 2, '39c6ff')
+  if (iframe == 1) {
+    drawLine(xvar- 12.5, yvar- 13, xvar- 12.5, yvar- 22, 2, "6c7c30");
+    drawLine(xvar+ 12.5, yvar- 13, xvar+ 12.5, yvar- 22, 2, "6c7c30");
+    drawLine(xvar- 12.5, yvar+ 13, xvar- 17, yvar- 5, 2, "6c7c30");
+    drawLine(xvar+ 12.5, yvar+ 13, xvar+ 17, yvar- 5, 2, "6c7c30");
+  }
+  if (iframe == 2) {
+    drawLine (xvar- 12.5, yvar- 13, xvar+ (-12.5- 4.5*d), yvar- 25, 2, "6c7c30");
+    drawLine (xvar+ 12.5, yvar- 13, xvar+ (12.5- 4.5*d), yvar- 25, 2, "6c7c30");
+    drawLine (xvar- 12.5, yvar+ 13, xvar+ (-12.5- (-20)*d), yvar+ 20, 2, "6c7c30");
+    drawLine (xvar+ 12.5, yvar+ 13, xvar+ (12.5- (-20)*d), yvar+ 20, 2, "6c7c30");
+  }
+  if (iframe == 3) {
+    drawLine (xvar- 12.5, yvar- 13, xvar+ (-12.5- 9.5*d), yvar- 17, 2, "6c7c30");
+    drawLine (xvar+ 12.5, yvar- 13, xvar+ (12.5- 9.5*d), yvar- 25, 2, "6c7c30");
+    drawLine (xvar- 12.5, yvar+ 13, xvar+ (-12.5- (-4.5)*d), yvar+ 40, 2, "6c7c30");
+    drawLine (xvar+ 12.5, yvar+ 13, xvar+ (12.5- (-4.5)*d), yvar+ 40, 2, "6c7c30");
+  }
+  if (iframe > 3) {
+    drawLine (xvar- 12.5, yvar+ 13, xvar + (Math.cos(iframe*50)*2) -17, yvar- 4, 2, "6c7c30");
+    drawLine (xvar+ 12.5, yvar+ 13, xvar+ (Math.sin(iframe* 50)* 2)+ 17, yvar- 4, 2, "6c7c30");
+    drawLine2 (xvar- 12.5, yvar- 13, 5, ((Math.cos((((iframe+5)%11)* 20)* 20))* 50)- 170, 2, "6c7c30");
+    drawLine2 (sprite.x, sprite.y, 5, sprite.rotation- (-40*d), 2, "6c7c30");
+    drawLine2 (xvar+ 12.5, yvar- 13, 5, (Math.cos(iframe* 20)* 50)- 170, 2, "6c7c30");
+    drawLine2, (sprite.x, sprite.y, 5, sprite.rotation- (-40*d), 2, "6c7c30");
+  }
+	sprite.rotation = 90 * d;
+}
